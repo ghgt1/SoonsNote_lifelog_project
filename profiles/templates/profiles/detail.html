@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>라이프로그</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'profiles/css/detail_styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <div class="nav">
+                <a href="/profiles"> <!--[B] 메뉴 화면으로 돌아가는 URL은 무엇일까요?-->
+                    <img src="{% static 'profiles/images/logo-color.svg' %}">
+                </a> 
+        </div>
+    </div>
+    <form>
+        {{form}}
+        <input type="submit" value ="전송">
+    </form>
+    <button onclick="window.location.href='{{user_id}}'">생활규칙성</button>
+    <div id="content">
+        <div class="container">
+            <div class="header" style="text-align : center;">
+                <h2>
+                    <img src="{% static 'profiles/images/profile_title.png' %}">
+                </h2>
+                <!--
+                <div class="menu_img">
+                    <img src="{% static 'profiles/images/total_avg.png' %}">
+                </div> -->
+                {% if sex == 'M'%}
+                    <img src="{% static 'profiles/images/grandpa.png'%}" width="500" height="500">
+                {% else %}
+                    <img src="{% static 'profiles/images/grandma.png'%}" width="500" height="500">
+                {% endif %}
+                    <p>{{name}}님 안녕하세요 </p>
+                    <p>나이: {{age}}세 </p>
+                    {% if sex == 'M'%}
+                        <p>성별: 남성</p>
+                    {% else %}
+                        <p>성별: 여성</p>
+                    {% endif %}
+                <div class="back-main">
+                    <a href="/profiles">돌아가기</a> <!--[C] 메뉴 화면으로 돌아가는 URL 입니다.-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <div class="footer">
+                <img src="{% static 'profiles/images/logo-gray.svg' %}">
+            </div>
+        </div>
+    </div>
+</body>

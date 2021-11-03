@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>라이프로그</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'profiles/css/detail_styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <div class="nav">
+                <a href="/profiles"> <!--[B] 메뉴 화면으로 돌아가는 URL은 무엇일까요?-->
+                    <img src="{% static 'profiles/images/logo-color.svg' %}">
+                </a> 
+        </div>
+    </div>
+    <form>
+        {{form}}
+        <input type="submit" value ="전송">
+    </form>
+    <button onclick="window.location.href='{{user_id}}'">생활규칙성</button>
+    <div id="content">
+        <div class="container">
+            <div class="header" style="text-align : center;">
+                <h2>
+                    <img src="{% static 'profiles/images/life_env_logo.png' %}">
+                </h2>
+                <div class="menu_img">
+                    <img src="{% static 'profiles/images/life_avg.png' %}" width="645" height="347">
+                </div> 
+                <h2>
+                    {% if anal_max1 == '휴식'%}
+                        <p>{{name}}씨는 휴식을 제일 많이 취하시네요. 많이 쉬는것만큼 중요한게 없죠!</p>
+                    {% elif  anal_max1 == '환기'%}
+                        <p>{{name}}씨는 환기를 제일 많이 하시네요. 적당한 환기는 실내 공기 순환에 좋답니다~! 자기전엔 꼭 닫고 자세요!</p>
+                    {% elif  anal_max1 == '프로그램 참여'%}
+                        <p></p>
+                    {% elif  anal_max1 == '취침'%}
+                        <p>{{name}}씨는 잠꾸러기시네요! 그치만 너무 긴 시간의 취침도 사실은 좋지 않답니다~</p>
+                    {% elif  anal_max1 == '주방정리'%}
+                        <p>{{name}}씨는 허리건강에 유의하셔야 할것같아요! 주방일이 너무많으면 도움을 청하는 것도 방법이랍니다.</p>
+                    {% elif  anal_max1 == '음식출납'%}
+                        <p>{{name}}씨는 </p>
+                    {% elif  anal_max1 == '음식데우기'%}
+                        <p>{{name}}씨는 음식을 따뜻하게 드시는 편이네요</p>
+                    {% elif  anal_max1 == '용변'%}
+                        <p>성별: 여성</p>
+                    {% elif  anal_max1 == '외출'%}
+                        <p>성별: 여성</p>
+                    {% elif  anal_max1 == '실내운동'%}
+                        <p>성별: 여성</p>
+                    {% elif  anal_max1 == '복약'%}
+                        <p>성별: 여성</p>
+                    {% elif  anal_max1 == '낮잠기상, TV시청'%}
+                        <p>성별: 여성</p>
+                    {% elif  anal_max1 == '기상, 환기'%}
+                        <p>성별: 여성</p>
+                    {% elif  anal_max1 == '귀가, 실내운동'%}
+                        <p>성별: 여성</p>
+                    {% elif  anal_max1 == 'TV시청'%}
+                        <p>성별: 여성</p>
+                </h2>
+                <div class="back-main">
+                    <a href="/profiles">돌아가기</a> <!--[C] 메뉴 화면으로 돌아가는 URL 입니다.-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <div class="footer">
+                <img src="{% static 'profiles/images/logo-gray.svg' %}">
+            </div>
+        </div>
+    </div>
+</body>
