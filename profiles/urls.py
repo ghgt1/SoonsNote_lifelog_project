@@ -18,7 +18,9 @@ from django.urls.conf import re_path
 from . import views #현재디렉토리내에있는 views를 가져와라
 
 urlpatterns = [
+    path('', views.index),
     path('profiles', views.index),
     re_path(r'^profiles/$', views.detail),
     path('profiles/<int:pk>/', views.life_env),
+    path('profiles/<int:pk>/ai_talk', views.ai_talk),
 ]

@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>라이프로그</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'profiles/css2/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff">
+</head>
+<body>
+    <div class="menu">
+        <h1><a href="{% url 'detail' %}"><img src="{% static 'profiles/image/logo02.svg' %}"></a></h1>
+        <ul>
+            <li><a href="{% url 'detail' %}">프로필</a></li>
+            <li><a href="{% url 'life_env' %}">생활규칙성</a></li>
+            <li><a href="{% url 'ai_talk' %}">순이와의 대화분석</a></li>
+        </ul>
+    </div>
+    
+    {% block content %}
+    {% endblock content %}
+</body>

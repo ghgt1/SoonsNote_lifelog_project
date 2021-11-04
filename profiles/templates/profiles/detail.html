@@ -1,26 +1,19 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>라이프로그</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{% static 'profiles/css/detail_styles.css' %}">
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
-</head>
+{% extends './base.html' %}
+
+{% block content %}
 <body>
     <div id="header">
         <div class="container">
             <div class="nav">
                 <a href="/profiles"> <!--[B] 메뉴 화면으로 돌아가는 URL은 무엇일까요?-->
                     <img src="{% static 'profiles/images/logo-color.svg' %}">
-                </a> 
+                </a>
         </div>
     </div>
-    <form>
-        {{form}}
-        <input type="submit" value ="전송">
-    </form>
-    <button onclick="window.location.href='{{user_id}}'">생활규칙성</button>
+    <button onclick="window.location.href='/profiles/?input_id={{user_id}}'">프로필</button>
+    <button onclick="window.location.href='/profiles/{{user_id}}'">생활 규칙성</button>
+    <button onclick="window.location.href='/profiles/{{user_id}}/ai_talk'">순이와의 대화분석</button>
+    <button onclick="window.location.href='{{user_id}}'">건강 분석</button>
     <div id="content">
         <div class="container">
             <div class="header" style="text-align : center;">
@@ -57,3 +50,4 @@
         </div>
     </div>
 </body>
+{% endblock content %}
