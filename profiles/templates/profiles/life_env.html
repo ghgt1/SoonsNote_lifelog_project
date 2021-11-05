@@ -1,27 +1,10 @@
 {% extends './base.html' %}
+{% load static %}
 {% block content %}
 <html>
-<head>
-    <title>라이프로그</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{% static 'profiles/css/detail_styles.css' %}">
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
-</head>
 <body>
-    <div id="header">
-        <div class="container">
-            <div class="nav">
-                <a href="/profiles"> <!--[B] 메뉴 화면으로 돌아가는 URL은 무엇일까요?-->
-                    <img src="{% static 'profiles/images/logo-color.svg' %}">
-                </a> 
-        </div>
-    </div>
-    <button onclick="window.location.href='/profiles/?input_id={{user_id}}'">프로필</button>
-    <button onclick="window.location.href='/profiles/{{user_id}}'">생활 규칙성</button>
-    <button onclick="window.location.href='/profiles/{{user_id}}/ai_talk'">순이와의 대화분석</button>
-    <button onclick="window.location.href='{{user_id}}'">건강 분석</button>
-    <div id="content">
-        <div class="container">
+    <div class="wrap-mindnote">
+        <div class="mindnote">
             <div class="header" style="text-align : center;">
                 <h2>
                     <img src="{% static 'profiles/images/life_env_logo.png' %}">
@@ -30,6 +13,7 @@
                     <img src="{% static 'profiles/images/life_avg.png' %}" width="645" height="347">
                     <p>전체 사용자의 27%는 TV시청, 20%는 휴식, 14%는 외출, 10%는 음식출납, 8%가 프로그램참여를 가장 선호했어요. 평균적으로 여가시간에 가장 많은 시간을 썻답니다.</p>
                 </div> 
+                {{graph|safe}}
                 <h2>
                     {% if anal_max1 == '휴식'%}
                         <p>{{name}}씨는 휴식을 제일 많이 취하시네요. 많이 쉬는것만큼 중요한게 없죠!</p>
@@ -63,6 +47,7 @@
                         <p>{{name}}씨는 집안에서 여가시간을 많이 보내시네요! TV시청시에는 꼭! 허리는 피시고 좋은 자세로 봐요!</p>
                     {% endif %}
                 </h2>
+                {{graph2|safe}}
                 <h2>
                     {% if anal_min1 == '휴식'%}
                         <p>{{name}}씨는 휴식이 부족해요! 운동도 좋고 집안일도 좋지만 가끔은 아무것도 없이 푹 쉬는것도 중요하답니다!</p>
@@ -132,7 +117,7 @@
                         <p>{{name}}씨는 전자레인지 청소한지가 너무 오래됐답니다. 주기적으로 전자레인지 내부를 청소해줘야 청결하게 식사를 하실수 있어요!</p>
                     {% elif  anal_min1 == '점심식사'%}
                         <p>{{name}}씨는 음식을 잘 안드시고 출납하는경우가 많으세요. 꼭! 건강을 위해서 음식을 다먹도록 해주세요!</p>
-                    {% elif  anal_min1 == '프로그램참여'%}
+                    {% elif  anal_min1 == '프로그램 참여'%}
                         <p>{{name}}씨는 여가활동시간이 부족해요! 저희가 특별히 마련한 프로그램에 참여해보시는게 어떠세요??</p>
                     {% elif  anal_min1 == '환기'%}
                         <p>{{name}}씨는 창문 여는 시간이 매우 부족해요. 특히 요리후에는 꼭 실내 환기를 시켜줘야 건강을 유지할수있답니다.</p>
@@ -140,13 +125,6 @@
                         <p>{{name}}씨는 휴식이 부족해요! 운동도 좋고 집안일도 좋지만 가끔은 아무것도 없이 푹 쉬는것도 중요하답니다!</p>
                     {% endif %}
                 </h2>
-            </div>
-        </div>
-    </div>
-    <div id="footer">
-        <div class="container">
-            <div class="footer">
-                <img src="{% static 'profiles/images/logo-gray.svg' %}">
             </div>
         </div>
     </div>

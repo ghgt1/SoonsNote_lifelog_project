@@ -1,21 +1,9 @@
 {% extends './base.html' %}
-
+{% load static %}
 {% block content %}
 <body>
-    <div id="header">
-        <div class="container">
-            <div class="nav">
-                <a href="/profiles"> <!--[B] 메뉴 화면으로 돌아가는 URL은 무엇일까요?-->
-                    <img src="{% static 'profiles/images/logo-color.svg' %}">
-                </a>
-        </div>
-    </div>
-    <button onclick="window.location.href='/profiles/?input_id={{user_id}}'">프로필</button>
-    <button onclick="window.location.href='/profiles/{{user_id}}'">생활 규칙성</button>
-    <button onclick="window.location.href='/profiles/{{user_id}}/ai_talk'">순이와의 대화분석</button>
-    <button onclick="window.location.href='{{user_id}}'">건강 분석</button>
-    <div id="content">
-        <div class="container">
+    <div class="wrap-mindnote">
+        <div class="mindnote">
             <div class="header" style="text-align : center;">
                 <h2>
                     <img src="{% static 'profiles/images/profile_title.png' %}">
@@ -29,23 +17,19 @@
                 {% else %}
                     <img src="{% static 'profiles/images/grandma.png'%}" width="500" height="500">
                 {% endif %}
-                    <p>{{name}}님 안녕하세요 </p>
-                    <p>나이: {{age}}세 </p>
-                    {% if sex == 'M'%}
-                        <p>성별: 남성</p>
-                    {% else %}
-                        <p>성별: 여성</p>
-                    {% endif %}
-                <div class="back-main">
-                    <a href="/profiles">돌아가기</a> <!--[C] 메뉴 화면으로 돌아가는 URL 입니다.-->
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="footer">
-        <div class="container">
-            <div class="footer">
-                <img src="{% static 'profiles/images/logo-gray.svg' %}">
+                    <li>
+                        <p>{{name}}님 안녕하세요 </p>
+                    </li>
+                    <li>
+                        <p>나이: {{age}}세 </p>
+                    </li>
+                    <li>
+                        {% if sex == 'M'%}
+                            <p>성별: 남성</p>
+                        {% else %}
+                            <p>성별: 여성</p>
+                        {% endif %}
+                    </li>
             </div>
         </div>
     </div>
