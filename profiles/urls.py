@@ -23,4 +23,5 @@ urlpatterns = [
     re_path(r'^profiles/$', views.detail),
     path('profiles/<int:pk>/', views.life_env),
     path('profiles/<int:pk>/ai_talk', views.ai_talk),
+    path('profiles/<int:pk>/health_anal', views.health_anal),
 ]

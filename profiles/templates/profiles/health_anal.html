@@ -1,0 +1,164 @@
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+<body>
+    <div class="wrap-mindnote">
+        <div class="mindnote">
+            <div class="header" style="text-align : center;">
+                <h2>
+                    <img src="{% static 'profiles/images/health_logo.png' %}" width="300" height="105">
+                </h2>
+                <h2>
+                    순이가 건강 분석을 완료했어요!
+                </h2>
+                <br>
+                <br>
+                <p>{{name}}님의 활동시간, 용변횟수, 수면시간을 분석했어요</p>
+                <p>해당 데이터를통해 제가 {{name}}님의 건강 상태를 알려드릴게요!</p>
+                <br>
+                <br>
+                <li>
+                    <h2>
+                        1. 수면건강 분석
+                        {% if sleep_time == 0%}
+                        <br>
+                            <img src="{% static 'profiles/images/수면_1.png' %}" width="1124" height="200">
+                            <br>
+                            <br>
+                            <p> {{name}}님의 수면시간이 매우 부족합니다. {{name}}님의 평균 수면 시간은 {{sleep_time}}분으로 전체 사용자의 평균 수면시간 369분에 한참 못미쳐요.</p>
+                            <p> 수면 시간이 부족하면, 혈압증가, 식욕증진, 면역체계 약화, 인지장애, 스트레스등과 같은 부작용이 생겨요. 지금부터라도 충분한 시간의 수면을 취하는것이 좋을것같아요.</p>
+                        {% elif sleep_time > 0 and sleep_time <= 200%}
+                        <br>
+                            <img src="{% static 'profiles/images/수면_2.png' %}" width="1124" height="200">
+                            <br>
+                            <br>
+                            <p> {{name}}님의 수면시간이 매우 부족합니다. {{name}}님의 평균 수면 시간은 {{sleep_time}}분으로 전체 사용자의 평균 수면시간 369분에 한참 못미쳐요.</p>
+                            <p> 수면 시간이 부족하면, 혈압증가, 식욕증진, 면역체계 약화, 인지장애, 스트레스등과 같은 부작용이 생겨요. 지금부터라도 충분한 시간의 수면을 취하는것이 좋을것같아요.</p>
+                        {% elif sleep_time > 200 and sleep_time <= 400%}
+                        <br>
+                            <img src="{% static 'profiles/images/수면_3.png' %}" width="1124" height="200">
+                            <br>
+                            <br>
+                            {% if sleep_time > 369%}
+                            <p> {{name}}님의 수면시간이 적당합니다. {{name}}님의 평균 수면 시간은 {{sleep_time}}분으로 전체 사용자의 평균 수면시간 369분과 흡사합니다.</p>
+                            <p> 적당한 수면시간은 컨디션 회복, 기억력과 집중력 향상, 생활패턴 안정화와 같이 삶의 전체적인 질을 높여줍니다.</p>
+                            {% else %}
+                            <p> {{name}}님의 수면시간이 부족합니다. {{name}}님의 평균 수면 시간은 {{sleep_time}}분으로 전체 사용자의 평균 수면시간 369분에 약간 모자랍니다.</p>
+                            <p> 수면 시간이 부족하면, 혈압증가, 식욕증진, 면역체계 약화, 인지장애, 스트레스등과 같은 부작용이 생겨요. 지금부터라도 충분한 시간의 수면을 취하는것이 좋을것같아요.</p>
+                            {%endif%}
+                        {% elif sleep_time > 400 and sleep_time <= 600%}
+                        <br>
+                            <img src="{% static 'profiles/images/수면_4.png' %}" width="1124" height="200">
+                            <br>
+                            <br>
+                            <p> {{name}}님의 수면시간이 많은 편입니다. {{name}}님의 평균 수면 시간은 {{sleep_time}}분으로 전체 사용자의 평균 수면시간 369분을 상회하나 걱정할 정도는 아닙니다.</p>
+                            <p> 적당한 수면시간은 컨디션 회복, 기억력과 집중력 향상, 생활패턴 안정화와 같이 삶의 전체적인 질을 높여줍니다.</p>
+                        {% elif sleep_time > 600 and sleep_time <= 800%}
+                        <br>
+                            <img src="{% static 'profiles/images/수면_5.png' %}" width="1124" height="200">
+                            <br>
+                            <br>
+                            <p> {{name}}님의 수면시간이 너무 많습니다. {{name}}님의 평균 수면 시간은 {{sleep_time}}분으로 전체 사용자의 평균 수면시간 369분을 한참 상회하네요.</p>
+                            <p> 수면시간이 너무 많으면 기면증과 같은 과수면 증상이 나타납니다. 잦은졸음, 방향감 상실, 집중력 저하, 기억력 퇴하등의 증상이 생겨요. 평균 수면시간인 6시간~7시간이내로 맞추는게 좋아보여요.</p>
+                        {% endif %}
+                    </h2>
+                </li>
+                <li>
+                    <h2>
+                        2. 활동시간 분석
+                        {% if act_time == 0%}
+                        <br>
+                            <img src="{% static 'profiles/images/액트_1.png' %}" width="1124" height="200">
+                            <br>
+                            <br>
+                            <p> {{name}}님의 활동시간이 매우 부족합니다. {{name}}님의 활동비율은 {{act_time}}}%로 전체 사용자의 평균 활동비율 11.22%에 한참 못미쳐요.</p>
+                            <p> 활동시간이 부족하면 비만, 만성피로, 성인병, 오십견, 면역력 저하와 같은 증상이 생겨요. 지금부터라도 저희가 추천하는 프로그램에 따라 활동시간을 늘려보는게 어떨까요?</p>
+                        {% elif act_time > 0 and act_time <= 25%}
+                        <br>
+                            <img src="{% static 'profiles/images/액트_2.png' %}" width="1124" height="200">
+                            <br>
+                            <br>
+                            {% if act_time > 11.22%}
+                            <p> {{name}}님의 활동시간이 적당합니다. {{name}}님의 활동비율은 {{act_time}}%로 전체 사용자의 평균 활동비율 11.22%를 약간 상회합니다.</p>
+                            <p> 적당한 활동시간과 운동은 성인병 예방, 체지방 감소(비만예방), 면역력 상승, 근력상승, 오십견 예방과같이 노인 병치레들의 최고 예방법이랍니다.</p>
+                            {% else %}
+                            <p> {{name}}님의 활동시간이 부족합니다. {{name}}님의 활동비율은 {{act_time}}}%로 전체 사용자의 평균 활동비율 11.22%에 약간 모자랍니다.</p>
+                            <p> 활동시간이 부족하면 비만, 만성피로, 성인병, 오십견, 면역력 저하와 같은 증상이 생겨요. 지금부터라도 저희가 추천하는 프로그램에 따라 활동시간을 늘려보는게 어떨까요?</p>
+                            {%endif%}
+                        {% elif act_time > 25 and act_time <= 50%}
+                        <br>
+                            <img src="{% static 'profiles/images/액트_3.png' %}" width="1124" height="200">
+                            <br>
+                            <br>
+                            <p> {{name}}님의 활동시간이 충분합니다. {{name}}님의 활동비율은 {{act_time}}%로 전체 사용자의 평균 활동비율 11.22%를 한참 상회합니다.</p>
+                            <p> 적당한 활동시간과 운동은 성인병 예방, 체지방 감소(비만예방), 면역력 상승, 근력상승, 오십견 예방과같이 노인 병치레들의 최고 예방법이랍니다.</p>
+                        {% elif act_time > 50 and act_time <= 75%}
+                        <br>
+                            <img src="{% static 'profiles/images/액트_4.png' %}" width="1124" height="200">
+                            <br>
+                            <br>
+                            <p> {{name}}님의 활동시간이 충분합니다. {{name}}님의 활동비율은 {{act_time}}%로 전체 사용자의 평균 활동비율 11.22%를 한참 상회합니다.</p>
+                            <p> 적당한 활동시간과 운동은 성인병 예방, 체지방 감소(비만예방), 면역력 상승, 근력상승, 오십견 예방과같이 노인 병치레들의 최고 예방법이랍니다.</p>
+                        {% elif act_time > 75 and act_time <= 100%}
+                        <br>
+                            <img src="{% static 'profiles/images/액트_5.png' %}" width="1124" height="200">
+                            <br>
+                            <br>
+                            <p> {{name}}님의 활동시간이 충분합니다. {{name}}님의 활동비율은 {{act_time}}%로 전체 사용자의 평균 활동비율 11.22%를 한참 상회합니다.</p>
+                            <p> 적당한 활동시간과 운동은 성인병 예방, 체지방 감소(비만예방), 면역력 상승, 근력상승, 오십견 예방과같이 노인 병치레들의 최고 예방법이랍니다.</p>
+                        {% endif %}
+                    </h2>
+                </li>
+                <li>
+                    <h2>
+                        3. 장건강 분석
+                        {% if act_time == 0%}
+                        <br>
+                            <img src="{% static 'profiles/images/용변_1.png' %}" width="1124" height="200">
+                            <br>
+                            <br>
+                            <p> {{name}}님의 활동시간이 매우 부족합니다. {{name}}님의 활동비율은 {{act_time}}}%로 전체 사용자의 평균 활동비율 11.22%에 한참 못미쳐요.</p>
+                            <p> 활동시간이 부족하면 비만, 만성피로, 성인병, 오십견, 면역력 저하와 같은 증상이 생겨요. 지금부터라도 저희가 추천하는 프로그램에 따라 활동시간을 늘려보는게 어떨까요?</p>
+                        {% elif act_time > 0 and act_time <= 25%}
+                        <br>
+                            <img src="{% static 'profiles/images/용변_2.png' %}" width="1124" height="200">
+                            <br>
+                            <br>
+                            {% if act_time > 11.22%}
+                            <p> {{name}}님의 활동시간이 적당합니다. {{name}}님의 활동비율은 {{act_time}}%로 전체 사용자의 평균 활동비율 11.22%를 약간 상회합니다.</p>
+                            <p> 적당한 활동시간과 운동은 성인병 예방, 체지방 감소(비만예방), 면역력 상승, 근력상승, 오십견 예방과같이 노인 병치레들의 최고 예방법이랍니다.</p>
+                            {% else %}
+                            <p> {{name}}님의 활동시간이 부족합니다. {{name}}님의 활동비율은 {{act_time}}}%로 전체 사용자의 평균 활동비율 11.22%에 약간 모자랍니다.</p>
+                            <p> 활동시간이 부족하면 비만, 만성피로, 성인병, 오십견, 면역력 저하와 같은 증상이 생겨요. 지금부터라도 저희가 추천하는 프로그램에 따라 활동시간을 늘려보는게 어떨까요?</p>
+                            {%endif%}
+                        {% elif act_time > 25 and act_time <= 50%}
+                        <br>
+                            <img src="{% static 'profiles/images/용변_3.png' %}" width="1124" height="200">
+                            <br>
+                            <br>
+                            <p> {{name}}님의 활동시간이 충분합니다. {{name}}님의 활동비율은 {{act_time}}%로 전체 사용자의 평균 활동비율 11.22%를 한참 상회합니다.</p>
+                            <p> 적당한 활동시간과 운동은 성인병 예방, 체지방 감소(비만예방), 면역력 상승, 근력상승, 오십견 예방과같이 노인 병치레들의 최고 예방법이랍니다.</p>
+                        {% elif act_time > 50 and act_time <= 75%}
+                        <br>
+                            <img src="{% static 'profiles/images/용변_4.png' %}" width="1124" height="200">
+                            <br>
+                            <br>
+                            <p> {{name}}님의 활동시간이 충분합니다. {{name}}님의 활동비율은 {{act_time}}%로 전체 사용자의 평균 활동비율 11.22%를 한참 상회합니다.</p>
+                            <p> 적당한 활동시간과 운동은 성인병 예방, 체지방 감소(비만예방), 면역력 상승, 근력상승, 오십견 예방과같이 노인 병치레들의 최고 예방법이랍니다.</p>
+                        {% elif act_time > 75 and act_time <= 100%}
+                        <br>
+                            <img src="{% static 'profiles/images/용변_5.png' %}" width="1124" height="200">
+                            <br>
+                            <br>
+                            <p> {{name}}님의 활동시간이 충분합니다. {{name}}님의 활동비율은 {{act_time}}%로 전체 사용자의 평균 활동비율 11.22%를 한참 상회합니다.</p>
+                            <p> 적당한 활동시간과 운동은 성인병 예방, 체지방 감소(비만예방), 면역력 상승, 근력상승, 오십견 예방과같이 노인 병치레들의 최고 예방법이랍니다.</p>
+                        {% endif %}
+                    </h2>
+                </li>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock content %}

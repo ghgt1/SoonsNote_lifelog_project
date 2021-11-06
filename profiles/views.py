@@ -65,6 +65,18 @@ def ai_talk(request, pk):
     context["ai_rec_max2"] = getperson(df, pk)['Recommendation_2'].values[0]
     return render(request, 'profiles/ai_talk.html',context=context)
 
+def health_anal(request, pk):
+    context={}
+    context["user_id"] = pk
+    context["name"] = getperson(df, pk)['NAME'].values[0]
+    sleep_time = int(getperson(df, pk)['Sleep_TIME'].values[0])
+    context["sleep_time"] = sleep_time
+    act_time = float(getperson(df, pk)['Act_TIME'].values[0])
+    context["act_time"] = act_time
+    toilet_count = float(getperson(df, pk)['Toilet_COUNT'].values[0])
+    context["toilet_count"] = toilet_count
+    return render(request, 'profiles/health_anal.html',context=context)
+
 def plot_graph(id):
     data = [
         go.Bar(
