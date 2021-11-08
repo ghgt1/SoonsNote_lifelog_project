@@ -32,7 +32,6 @@ plotly==5.3.1
 pyasn1==0.4.2
 pyasn1-modules==0.2.1
 pycrypto==2.6.1
-pygobject==3.26.1
 PyJWT==1.5.3
 pyOpenSSL==17.5.0
 pyserial==3.4
