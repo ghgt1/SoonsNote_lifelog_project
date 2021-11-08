@@ -163,13 +163,13 @@ img {
     background: url(../images/ic-feed-black.svg) no-repeat;
 }
 .menu ul li:nth-child(2) a:after{
-    background: url(../images/ic-heart-black.svg) no-repeat;
+    background: url(../images/ic-feed-black.svg) no-repeat;
 }
 .menu ul li.second-menu a:after{
     background: url(../images/ic-heart.svg) no-repeat;
 }
 .menu ul li:last-child a:after{
-    background: url(../images/ic-pen-black.svg) no-repeat;
+    background: url(../images/ic-feed-black.svg) no-repeat;
 }
 .menu ul li.last-menu a:after{
     background: url(../images/ic-pen.svg) no-repeat;
@@ -186,7 +186,6 @@ img {
 .note-list {
     margin: 0 70px;
     padding-top: 50px;
-    background: url(../images/note-bg.svg) repeat-x center/1535px 974px;
 }
 .note-list .sort{
     width: 1100px;
@@ -333,7 +332,6 @@ img {
     margin: 0 70px;
     padding-top: 336px;
     padding-bottom: 505px; 
-    background: url(../images/note-bg.svg) repeat-x center/1535px 974px;
 }
 .default-box{
     width: 670px;
@@ -603,7 +601,6 @@ img {
     margin: 0 70px;
     padding-top: 175px;
     padding-bottom: 200px;
-    background: url(../images/note-bg.svg) repeat-x center/1535px 974px;
 }
 .mindnote ul{
     width: 850px;
@@ -628,7 +625,6 @@ img {
     height: 20px;
     top: 0;
     left: 0;
-    background: url(../images/ic-heart-pink.svg)
 }
 .mindnote p{
     font-family: 'NanumBarunpen';
@@ -648,7 +644,6 @@ form{
     margin: 0 70px;
     padding-top: 120px;
     padding-bottom: 200px;
-    background: url(../images/note-bg.svg) repeat-x center/1535px 974px;
 }
 .editor{
     overflow: hidden;
