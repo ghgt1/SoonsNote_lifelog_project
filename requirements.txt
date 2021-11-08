@@ -51,7 +51,6 @@ tenacity==8.0.1
 Twisted==17.9.0
 urllib3==1.22
 whitenoise==5.3.0
-xkit==0.0.0
 xlrd==2.0.1
 zope.interface==4.3.2
 psycopg2==2.6.2
