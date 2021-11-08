@@ -46,7 +46,6 @@ SecretStorage==2.3.1
 service-identity==16.0.0
 six==1.16.0
 sqlparse==0.4.1
-ssh-import-id==5.7
 systemd-python==234
 tenacity==8.0.1
 Twisted==17.9.0
