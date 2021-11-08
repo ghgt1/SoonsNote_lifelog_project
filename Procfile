@@ -1,1 +1,1 @@
-web:gunicorn lifelog.wsgi --log-file -
+web gunicorn lifelog.wsgi:application --log-file -
