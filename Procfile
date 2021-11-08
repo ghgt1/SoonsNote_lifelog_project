@@ -1,0 +1,1 @@
+web: gunicorn lifelog.wsgi --log-file -

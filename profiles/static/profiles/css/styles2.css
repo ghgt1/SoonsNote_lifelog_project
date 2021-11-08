@@ -37,7 +37,7 @@ img {
 .wrap-intro{
     width: 100%;
     height: 100vh;
-    background-image: url(../image/intro-img.png), url(../image/bg-pattern.png);
+    background-image: url(../images/intro-img.png), url(../images/bg-pattern.png);
     background-repeat: no-repeat;
     background-position: bottom right, bottom left;
     background-size: 60% ,contain;
@@ -78,7 +78,7 @@ img {
     width: 236px;
     height: 100vh;
     min-height: 900px;
-    background: url(../image/menu-bg.png) no-repeat left top/contain;
+    background: url(../images/menu-bg.png) no-repeat left top/contain;
     z-index: 99;
 }
 .menu:before{
@@ -101,7 +101,7 @@ img {
     top: 48%;
     right: -21px;
     transform: translateY(-50%);
-    background: url(../image/notespring.svg) no-repeat;
+    background: url(../images/notespring.svg) no-repeat;
 }
 .menu h1{
     position: absolute;
@@ -154,25 +154,25 @@ img {
     height: 20px;
     top: 0;
     left: -32px;
-    background: url(../image/ic-feed-white.svg) no-repeat;
+    background: url(../images/ic-feed-white.svg) no-repeat;
 }
 .menu ul li.select-menu a{
     color: #fff;
 }
 .menu ul li:first-child a:after{
-    background: url(../image/ic-feed-black.svg) no-repeat;
+    background: url(../images/ic-feed-black.svg) no-repeat;
 }
 .menu ul li:nth-child(2) a:after{
-    background: url(../image/ic-heart-black.svg) no-repeat;
+    background: url(../images/ic-heart-black.svg) no-repeat;
 }
 .menu ul li.second-menu a:after{
-    background: url(../image/ic-heart.svg) no-repeat;
+    background: url(../images/ic-heart.svg) no-repeat;
 }
 .menu ul li:last-child a:after{
-    background: url(../image/ic-pen-black.svg) no-repeat;
+    background: url(../images/ic-pen-black.svg) no-repeat;
 }
 .menu ul li.last-menu a:after{
-    background: url(../image/ic-pen.svg) no-repeat;
+    background: url(../images/ic-pen.svg) no-repeat;
 }
 
 
@@ -186,7 +186,7 @@ img {
 .note-list {
     margin: 0 70px;
     padding-top: 50px;
-    background: url(../image/note-bg.svg) repeat-x center/1535px 974px;
+    background: url(../images/note-bg.svg) repeat-x center/1535px 974px;
 }
 .note-list .sort{
     width: 1100px;
@@ -333,7 +333,7 @@ img {
     margin: 0 70px;
     padding-top: 336px;
     padding-bottom: 505px; 
-    background: url(../image/note-bg.svg) repeat-x center/1535px 974px;
+    background: url(../images/note-bg.svg) repeat-x center/1535px 974px;
 }
 .default-box{
     width: 670px;
@@ -355,7 +355,7 @@ img {
     font-family: 'NanumSquare';
     color: #fff;
     font-size: 17px;
-    background: url(../image/ic-pen-white.svg) no-repeat 20px 11px/17px 17px; 
+    background: url(../images/ic-pen-white.svg) no-repeat 20px 11px/17px 17px; 
     background-color: #4e4f53;
     border-radius: 26px;
 }
@@ -603,7 +603,7 @@ img {
     margin: 0 70px;
     padding-top: 175px;
     padding-bottom: 200px;
-    background: url(../image/note-bg.svg) repeat-x center/1535px 974px;
+    background: url(../images/note-bg.svg) repeat-x center/1535px 974px;
 }
 .mindnote ul{
     width: 850px;
@@ -628,7 +628,7 @@ img {
     height: 20px;
     top: 0;
     left: 0;
-    background: url(../image/ic-heart-pink.svg)
+    background: url(../images/ic-heart-pink.svg)
 }
 .mindnote p{
     font-family: 'NanumBarunpen';
@@ -648,7 +648,7 @@ form{
     margin: 0 70px;
     padding-top: 120px;
     padding-bottom: 200px;
-    background: url(../image/note-bg.svg) repeat-x center/1535px 974px;
+    background: url(../images/note-bg.svg) repeat-x center/1535px 974px;
 }
 .editor{
     overflow: hidden;
