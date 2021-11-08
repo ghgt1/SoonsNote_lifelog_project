@@ -165,8 +165,14 @@ img {
 .menu ul li:nth-child(2) a:after{
     background: url(../images/ic-feed-black.svg) no-repeat;
 }
+.menu ul li:nth-child(3) a:after{
+    background: url(../images/ic-feed-black.svg) no-repeat;
+}
 .menu ul li.second-menu a:after{
     background: url(../images/ic-heart.svg) no-repeat;
+}
+.menu ul li.third-menu a:after{
+    background: url(../images/ic-feed-black.svg) no-repeat;
 }
 .menu ul li:last-child a:after{
     background: url(../images/ic-feed-black.svg) no-repeat;
