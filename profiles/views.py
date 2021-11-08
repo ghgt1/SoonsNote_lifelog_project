@@ -51,6 +51,7 @@ def life_env(request, pk):
     id = int(pk)
     context["graph"] = plot_graph(id)
     context["graph2"] = plot_graph2(id)
+    context["graph3"] = plot_graph3()
     return render(request, 'profiles/life_env.html', context= context)
 
 def ai_talk(request, pk):
@@ -86,7 +87,7 @@ def plot_graph(id):
     ]
     
     layout = plotly.graph_objs.Layout(
-        title='Bar-chart'
+        title='가장 많이한 생활패턴'
     )
     
     figure = plotly.graph_objs.Figure(
@@ -104,11 +105,17 @@ def plot_graph2(id):
     ]
     
     layout = plotly.graph_objs.Layout(
-        title='Bar-chart'
+        title='가장 부족한 생활패턴'
     )
     
     figure = plotly.graph_objs.Figure(
         data=data, layout=layout
     )
     
+    return figure.to_html(full_html=False)
+
+def plot_graph3():    
+    x=['TV시청', '휴식', '외출', '음식출납', '프로그램참여', '기타']
+    y=[27, 20, 14, 10, 8, 21]
+    figure = go.Figure(data=[go.Pie(labels=x, values=y)])
     return figure.to_html(full_html=False)

@@ -20,15 +20,30 @@
                 <li>
                     <h2>
                         1. {{ai_rec_max1}}
-                        {% if ai_rec_max1 == "TV 프로그램"%}
+                        {% if ai_rec_max1 == "TV프로그램"%}
+                        <br>
+                        <br>
+                            <img src="{% static 'profiles/images/TV.png' %}" width="525" height="380">
                             <p> {{name}}님과의 대화분석을 통한결과! TV프로그램을 시청해주는것이 좋을것같아요. 요즘 TV속에서는 없는 컨텐츠가없답니다. 지루할틈이없을거에요!</p>
                         {% elif ai_rec_max1 == "수면음악"%}
+                        <br>
+                        <br>
+                            <img src="{% static 'profiles/images/수면음악.png' %}" width="525" height="380">
                             <p> {{name}}님과의 대화분석을 통한결과! 수면음악을 들어주는것이 좋을것같아요. 잘때 잔잔한 노래는 숙면에 매우 큰 도움이 된답니다.</p>
                         {% elif ai_rec_max1 == "실내운동"%}
+                        <br>
+                        <br>
+                            <img src="{% static 'profiles/images/실내운동.png' %}" width="525" height="380">
                             <p> {{name}}님과의 대화분석을 통한결과! 실내에서 운동을 해주는것이 좋을것같아요. 미세먼지 걱정도없고 실내에서도 간단한 운동만으로 건강을 유지할수있답니다!</p>
                         {% elif ai_rec_max1 == "여행지"%}
+                        <br>
+                        <br>
+                            <img src="{% static 'profiles/images/여행지.png' %}" width="525" height="380">
                             <p> {{name}}님과의 대화분석을 통한결과! 여행지로 떠나보는것이 어떨까요? 여행을 간다는것은 항상 마음을 설레게하죠. 더늦기전에 지금당장 떠나보기!</p>
                         {% elif ai_rec_max1 == "치매예방활동"%}
+                        <br>
+                        <br>
+                            <img src="{% static 'profiles/images/치매.png' %}" width="525" height="380">
                             <p> {{name}}님과의 대화분석을 통한결과! 치매예방 종합활동이 필요해보여요 ㅜㅜ... 저희가 매주 치매예방활동을 주최하는것이 있는데 이번주부터 참여해봐도 좋을것같아요!</p>
                         {% endif %}
                     </h2>

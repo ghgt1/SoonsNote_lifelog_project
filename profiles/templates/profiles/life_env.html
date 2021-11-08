@@ -10,7 +10,7 @@
                     <img src="{% static 'profiles/images/life_env_logo.png' %}">
                 </h2>
                 <div class="menu_img">
-                    <img src="{% static 'profiles/images/life_avg.png' %}" width="645" height="347">
+                    {{graph3|safe}}
                     <p>전체 사용자의 27%는 TV시청, 20%는 휴식, 14%는 외출, 10%는 음식출납, 8%가 프로그램참여를 가장 선호했어요. 평균적으로 여가시간에 가장 많은 시간을 썻답니다.</p>
                 </div> 
                 {{graph|safe}}
